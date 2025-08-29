@@ -2,57 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Spa & Wellness Design System - All colors in HSL format */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Spa Primary Colors */
+    --spa-mint: 146 58% 75%; /* #A8E6CF - Soft Mint Green */
+    --spa-teal: 177 58% 60%; /* #4ECDC4 - Calming Teal */
+    --spa-white: 0 0% 100%; /* #FFFFFF - Pure White */
+    --spa-cream: 44 100% 96%; /* #FFF8E7 - Warm Cream */
+    --spa-forest: 210 29% 24%; /* #2C3E50 - Deep Forest */
+    
+    /* Spa Secondary Colors */
+    --spa-gold: 48 74% 61%; /* #F4D03F - Wellness Gold */
+    --spa-sage: 93 14% 60%; /* #9CAF88 - Sage Green */
+    --spa-lavender: 265 31% 72%; /* #B19CD9 - Lavender */
+    --spa-gray: 184 9% 62%; /* #95A5A6 - Cool Gray */
+    
+    /* Core Design System */
+    --background: var(--spa-white);
+    --foreground: var(--spa-forest);
+    
+    --card: var(--spa-white);
+    --card-foreground: var(--spa-forest);
+    
+    --popover: var(--spa-white);
+    --popover-foreground: var(--spa-forest);
+    
+    --primary: var(--spa-teal);
+    --primary-foreground: var(--spa-white);
+    
+    --secondary: var(--spa-cream);
+    --secondary-foreground: var(--spa-forest);
+    
+    --muted: var(--spa-cream);
+    --muted-foreground: var(--spa-gray);
+    
+    --accent: var(--spa-mint);
+    --accent-foreground: var(--spa-forest);
+    
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --destructive-foreground: var(--spa-white);
+    
+    --border: var(--spa-sage);
+    --input: var(--spa-sage);
+    --ring: var(--spa-teal);
+    
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Spa Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--spa-mint)) 0%, hsl(var(--spa-teal)) 100%);
+    --gradient-button: linear-gradient(90deg, hsl(var(--spa-teal)) 0%, hsl(var(--spa-mint)) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(var(--spa-cream)) 0%, hsl(var(--spa-white)) 100%);
+    
+    /* Spa Shadows */
+    --shadow-soft: 0 5px 20px rgba(76, 205, 196, 0.08);
+    --shadow-hover: 0 15px 35px rgba(76, 205, 196, 0.12);
+    --shadow-glow: 0 8px 25px rgba(76, 205, 196, 0.4);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.3s ease-out;
   }
 
   .dark {
@@ -101,5 +111,160 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Spa Animation Keyframes */
+@layer utilities {
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fade-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes gentle-float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+  
+  @keyframes gentle-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
+  
+  @keyframes count-up {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Spa Animation Classes */
+  .animate-fade-in {
+    animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-fade-in-left {
+    animation: fade-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-fade-in-right {
+    animation: fade-in-right 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-gentle-float {
+    animation: gentle-float 6s ease-in-out infinite;
+  }
+  
+  .animate-gentle-pulse {
+    animation: gentle-pulse 4s ease-in-out infinite;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 0.5s;
+  }
+  
+  .animate-delay-700 {
+    animation-delay: 0.7s;
+  }
+  
+  .animate-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animate-delay-1400 {
+    animation-delay: 1.4s;
+  }
+  
+  .animate-delay-1800 {
+    animation-delay: 1.8s;
+  }
+  
+  .animate-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  /* Spa Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-glow:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Spa Gradients */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-button {
+    background: var(--gradient-button);
+  }
+  
+  .bg-gradient-section {
+    background: var(--gradient-section);
   }
 }

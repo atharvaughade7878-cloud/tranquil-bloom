@@ -52,16 +52,20 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				'spa-mint': 'hsl(var(--spa-mint))',
+				'spa-teal': 'hsl(var(--spa-teal))',
+				'spa-white': 'hsl(var(--spa-white))',
+				'spa-cream': 'hsl(var(--spa-cream))',
+				'spa-forest': 'hsl(var(--spa-forest))',
+				'spa-gold': 'hsl(var(--spa-gold))',
+				'spa-sage': 'hsl(var(--spa-sage))',
+				'spa-lavender': 'hsl(var(--spa-lavender))',
+				'spa-gray': 'hsl(var(--spa-gray))'
+			},
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'poppins': ['Poppins', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
